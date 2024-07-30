@@ -1,0 +1,26 @@
+{% extends "preentrega3app/index.html" %}
+{%load static%}
+{%block header%}
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Nuevos Libros</h1>
+            <p class="lead fw-normal text-white-50 mb-0">Ingresa los datos en el siguiente formulario.</p>
+        </div>
+    </div>
+</header>
+{%endblock%}
+{%block content %}
+
+<form class="form-inline" action="formulario_libro" method="POST">
+   <div class="form-group">
+    {% csrf_token %}
+    <p>Titulo: <input type="text" name="titulo" class="form-control"></p>
+    <p>Fecha: <input type="date" name="fecha" class="form-control"></p>
+</div>
+
+<input type="submit" value="enviar" class="form-control" style="background: #000000;color: white;">
+
+</form>
+
+{%endblock%}
